@@ -2,7 +2,7 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 <% Challenge.all.each do |challenge| %>
   <p>
-    <%= challenge.description  %> by <%= challenge.author.email  %>
+    <%= challenge.description  %> by author <%= challenge.author.email  %>
   </p>
 <% end %>
 
