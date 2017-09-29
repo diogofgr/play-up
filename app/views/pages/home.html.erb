@@ -1,16 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% Challenge.all.each do |challenge| %>
-  <p>
-    <%= challenge.description  %> by author <%= challenge.author.email  %>
-  </p>
-<% end %>
+<h4 id="main-subtitle">Take on a</h4>
+<h1 id="main-title">Challenge!</h1>
 
-<div>
-  <%= form_tag( challenges_path, :method => "post", class: "challenge-form") do %>
-    <%= text_field_tag :description, params[:description], placeholder: "Write your reply here",class: "wide", id: "challenge-description" %>
-    <%= submit_tag "Create", name: nil, class: "btn btn-brand-with-bg answer-submit", id: "answer-submit"%>
+<div class="challenge-list">
+  <% Challenge.all.reverse.each do |challenge| %>
+
+    <div class="challenge-card">
+      <h2>
+        <%= challenge.description.capitalize  %>
+      </h2>
+      <p>
+        by <%= challenge.author.email  %>
+      </p>
+    </div>
+
   <% end %>
 </div>
+
+<%= render 'shared/message_box' %>
+
 
 

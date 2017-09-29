@@ -1,0 +1,24 @@
+.message-box {
+  background-color: #eee;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0px;
+}
+
+#answer-submit {
+  border-radius: 5px;
+  color: white;
+  background-color: #2ad8ff;
+  vertical-align: baseline;
+  margin: 5px;
+ }
+
+#challenge-description {
+  border-radius: 5px;
+  width: 90%;
+  padding: 5px;
+  color: #666;
+  background-color: white;
+ }
