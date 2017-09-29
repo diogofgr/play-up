@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :proposals, class_name: 'Challenge', foreign_key: :author_id
+  has_and_belongs_to_many :challenges
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
