@@ -8,11 +8,21 @@
       <h2>
         <%= challenge.description.capitalize  %>
       </h2>
-        <% if challenge.author.first_name  %>
-          <p>by <%= challenge.author.first_name  %></p>
-        <% else %>
-          <p><%= anonymous %></p>
-        <% end %>
+      <% if challenge.author.first_name  %>
+        <p>by <%= challenge.author.first_name  %></p>
+      <% else %>
+        <p><%= anonymous %></p>
+      <% end %>
+
+      <div class="btn-accept-challenge">
+      <%= link_to "Accept", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
+      </div>
+
+      <% challenge.players[0..3].each do |player|  %>
+        <p><%= player.first_name  %></p>
+      <% end %>
+
+
     </div>
 
   <% end %>
