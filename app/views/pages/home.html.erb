@@ -2,15 +2,27 @@
 <h1 id="main-title">Challenge!</h1>
 
 <div class="challenge-list">
-  <% Challenge.all.reverse.each do |challenge| %>
+  <% Challenge.all.reverse[0..19].each do |challenge| %>
 
     <div class="challenge-card">
       <h2>
         <%= challenge.description.capitalize  %>
       </h2>
-      <p>
-        by <%= challenge.author.email  %>
-      </p>
+      <% if challenge.author.first_name  %>
+        <p>by <%= challenge.author.first_name  %></p>
+      <% else %>
+        <p><%= anonymous %></p>
+      <% end %>
+
+      <div class="btn-accept-challenge">
+      <%= link_to "Accept", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
+      </div>
+
+      <% challenge.players[0..3].each do |player|  %>
+        <p><%= player.first_name  %></p>
+      <% end %>
+
+
     </div>
 
   <% end %>

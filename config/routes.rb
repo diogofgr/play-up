@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :challenges, only: [:new, :create]
+  resources :challenges, only: [:new, :create, :update]
 
 end
