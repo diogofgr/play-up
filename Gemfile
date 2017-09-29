@@ -17,6 +17,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'omniauth-facebook'
+# gem 'simple_form'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -26,4 +27,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'omniauth-facebook'
+  # gem 'simple_form'
 end
