@@ -1,4 +1,5 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
 #main-title, #main-subtitle  {
   text-align: center;
 }
@@ -12,13 +13,67 @@
   -webkit-flex-direction: column;
   align-items: center;
   -webkit-align-items: center;
-
 }
-
+.challenge-cardb{
+  background-color:gray;
+  font-family: poppins;
+  width:500px;
+  margin-bottom:60px;
+  display:flex;
+  flex-direction:column;
+  display:-webkit-flex;
+  -webkit-flex-direction:column;
+}
 .challenge-card {
   background-color: #ff7015;
   color: white;
-  width: 300px;
-  margin: 5px;
-  padding: 5px;
+  box-sizing:border-box;
+  position:relative;
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  padding: 10px 20px 10px 120px;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  display:-webkit-flex;
+  -webkit-flex-direction:row;
+  -webkit-justify-content:space-between;
+}
+.challenge-cardpic{
+  width:120px;
+  height:120px;
+  background-color: rgb(200,200,200);
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform:translate(-0%,-0%);
+  margin:-30px 0px 0px -30px;
+}
+.challenge-cardtxt{
+box-sizing:border-box;
+padding:0px 0px 0px 0px;
+}
+.challenge-cardplayer{
+box-sizing:border-box;
+padding:0px 10px 0px 20px;
+font-family:poppins;
+}
+.btn-accept-challenge{
+  width:80px;
+  height: 80px;
+  transform:scale(1,1);
+  background-color:blue;
+  border-radius: 100%;
+  box-shadow: 0px 0px 20px rgb(100,100,100);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform:translate(-0%,-0%);
+  margin:16% 2% 0% 0%;
+  transition: all 0.2s ease;
+}
+.btn-accept-challenge:hover{
+  transform:scale(1.1,1.1);
+  background-color:lightblue;
 }
