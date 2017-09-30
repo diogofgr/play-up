@@ -1,35 +1,76 @@
 <div class="challenge-list">
-  <% Challenge.all.reverse[0..19].each do |challenge| %>
-  <div class="challenge-cardb">
-    <div class="challenge-card">
-      <div class="challenge-cardpic hidden"></div>
-      <% avatar_url = challenge.author.facebook_picture_url || "http://placehold.it/30x30" %>
-          <%= image_tag avatar_url, class: "challenge-cardpic", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-      <div class="challenge-cardtxt">
-        <h2>
-          <%= challenge.description.capitalize  %>
-        </h2>
-        <% if challenge.author.first_name  %>
-          <p>by <%= challenge.author.first_name  %></p>
-        <% else %>
-          <p><%= anonymous %></p>
-        <% end %>
-      </div>
-      <div class="btn-accept-challenge">
-        <%= link_to "Accept", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
-      </div>
-    </div>
-    <div class="challenge-cardplayer">
-      <% sampled_players = challenge.players.sample(3) %>
-      <% sampled_players.empty? ? player_str = 'No challengers yet.' : player_str = 'Challengers: ' %>
+  <!-- show the challenges you are participating in -->
+  <% @your_challenges.each do |challenge| %>
+    <% if !challenge.is_done %>
+      <div class="challenge-cardb">
+        <div class="challenge-card">
+          <div class="challenge-cardpic hidden"></div>
+          <% avatar_url = challenge.author.facebook_picture_url || "http://placehold.it/30x30" %>
+              <%= image_tag avatar_url, class: "challenge-cardpic", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <div class="challenge-cardtxt">
+            <h2>
+              <%= challenge.description.capitalize  %>
+            </h2>
+            <% if challenge.author.first_name  %>
+              <p>by <%= challenge.author.first_name  %></p>
+            <% else %>
+              <p>anonymous</p>
+            <% end %>
+          </div>
+          <div class="btn-accept-challenge btn-challenge-done">
+            <%= link_to "Done", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
+          </div>
 
-      <% sampled_players.each do |player|  %>
-        <% player_str += ' ' + player.first_name + ',' if player.first_name != nil %>
-      <% end %>
-      <p><%= player_str[0..-2] %></p>
+        </div>
+        <div class="challenge-cardplayer">
+          <% sampled_players = challenge.players.sample(3) %>
+          <% sampled_players.empty? ? player_str = 'No challengers yet.' : player_str = 'Challengers: ' %>
 
-    </div>
-  </div>
+          <% sampled_players.each do |player|  %>
+            <% player_str += ' ' + player.first_name + ',' if player.first_name != nil %>
+          <% end %>
+          <p><%= player_str[0..-2] %></p>
+
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <!-- show the last submited challenges -->
+  <% @last_challenges.each do |challenge| %>
+    <% if !challenge.is_done %>
+      <div class="challenge-cardb">
+        <div class="challenge-card">
+          <div class="challenge-cardpic hidden"></div>
+          <% avatar_url = challenge.author.facebook_picture_url || "http://placehold.it/30x30" %>
+              <%= image_tag avatar_url, class: "challenge-cardpic", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <div class="challenge-cardtxt">
+            <h2>
+              <%= challenge.description.capitalize  %>
+            </h2>
+            <% if challenge.author.first_name  %>
+              <p>by <%= challenge.author.first_name  %></p>
+            <% else %>
+              <p>anonymous</p>
+            <% end %>
+          </div>
+          <div class="btn-accept-challenge">
+            <%= link_to "Accept", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
+          </div>
+
+        </div>
+        <div class="challenge-cardplayer">
+          <% sampled_players = challenge.players.sample(3) %>
+          <% sampled_players.empty? ? player_str = 'No challengers yet.' : player_str = 'Challengers: ' %>
+
+          <% sampled_players.each do |player|  %>
+            <% player_str += ' ' + player.first_name + ',' if player.first_name != nil %>
+          <% end %>
+          <p><%= player_str[0..-2] %></p>
+
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

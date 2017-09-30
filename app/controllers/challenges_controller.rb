@@ -15,7 +15,13 @@ class ChallengesController < ApplicationController
 
   def update
     @challenge = Challenge.find(params[:id])
-    @challenge.players << current_user
+    if !@challenge.players.include?(current_user)
+      @challenge.players << current_user
+    else
+      @challenge.is_done = true
+      # TODO: give points to current_user.
+      # flash new player score.
+    end
     @challenge.save
 
     redirect_to '/'
