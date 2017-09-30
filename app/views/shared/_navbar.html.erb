@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Current score: 1020 EXP", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <h6 class="navbar-wagon-item">score: <%= current_user.score %> EXP</h6>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

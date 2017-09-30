@@ -15,7 +15,18 @@ class ChallengesController < ApplicationController
 
   def update
     @challenge = Challenge.find(params[:id])
-    @challenge.players << current_user
+    if !@challenge.players.include?(current_user)
+      @challenge.players << current_user
+    else
+      @challenge.is_done = true
+      # TODO: give points to current_user:
+      points = 20
+      current_user.score += points
+      current_user.save
+      # flash new player score.
+      flash[:notice] = 'You\'ve received ' + points.to_s + ' EXP'
+
+    end
     @challenge.save
 
     redirect_to '/'
