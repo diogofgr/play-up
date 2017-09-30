@@ -8,9 +8,9 @@
           <% avatar_url = challenge.author.facebook_picture_url || "http://placehold.it/30x30" %>
               <%= image_tag avatar_url, class: "challenge-cardpic", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <div class="challenge-cardtxt">
-            <h2>
+            <h3>
               <%= challenge.description.capitalize  %>
-            </h2>
+            </h3>
             <% if challenge.author.first_name  %>
               <p>by <%= challenge.author.first_name  %></p>
             <% else %>
@@ -45,9 +45,9 @@
           <% avatar_url = challenge.author.facebook_picture_url || "http://placehold.it/30x30" %>
               <%= image_tag avatar_url, class: "challenge-cardpic", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <div class="challenge-cardtxt">
-            <h2>
+            <h3>
               <%= challenge.description.capitalize  %>
-            </h2>
+            </h3>
             <% if challenge.author.first_name  %>
               <p>by <%= challenge.author.first_name  %></p>
             <% else %>
