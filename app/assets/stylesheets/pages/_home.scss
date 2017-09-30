@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 body {
-  background-color: white;
+  background-color: $gray-dark-brand;
 }
 
 .challenge-list {
@@ -13,9 +13,11 @@ body {
   align-items: center;
   -webkit-align-items: center;
 }
+
 .challenge-cardb{
-  background-color:gray;
+  background-color: rgba(103,97,93,0.5);
   border-radius: 0px 10px 10px 0px;
+  color: lightgray;
   width:500px;
   margin-top:20px;
   display:flex;
@@ -24,7 +26,7 @@ body {
   -webkit-flex-direction:column;
 }
 .challenge-card {
-  background-color: #ff7015;
+  background-color: rgba(255,112,21,0.3);
   border-radius: 0px 10px 0px 0px;
   color: white;
   box-sizing:border-box;
@@ -51,7 +53,6 @@ body {
   margin:-30px 0px 0px -30px;
 }
 .challenge-cardtxt{
-  border-style: dashed;
   width: 100%;
   box-sizing:border-box;
   padding:0px 0px 0px 0px;
