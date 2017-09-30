@@ -1,8 +1,6 @@
 // Specific CSS for your home-page
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
-#main-title, #main-subtitle  {
-  text-align: center;
-}
+
 
 .challenge-list {
   width: 100%;
@@ -18,7 +16,7 @@
   background-color:gray;
   font-family: poppins;
   width:500px;
-  margin-bottom:60px;
+  margin-top:20px;
   display:flex;
   flex-direction:column;
   display:-webkit-flex;
@@ -40,14 +38,14 @@
   -webkit-justify-content:space-between;
 }
 .challenge-cardpic{
-  width:120px;
-  height:120px;
+  width:70px;
+  height:70px;
   background-color: rgb(200,200,200);
   border-radius: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  transform:translate(-0%,-0%);
+  transform:translate(25%,25%);
   margin:-30px 0px 0px -30px;
 }
 .challenge-cardtxt{
