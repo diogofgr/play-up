@@ -12,13 +12,16 @@ body {
   -webkit-flex-direction: column;
   align-items: center;
   -webkit-align-items: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 
 .challenge-cardb{
-  background-color: rgba(103,97,93,0.5);
+  background-color: rgba(103,97,93,0.6);
   border-radius: 0px 10px 10px 0px;
+  border: 3px solid black;
   color: lightgray;
-  width:90%;
+  width:85%;
   margin-top:20px;
   display:flex;
   flex-direction:column;
@@ -26,8 +29,9 @@ body {
   -webkit-flex-direction:column;
 }
 .challenge-card {
-  background-color: rgba(255,112,21,0.3);
+  background-color: rgba(70,154,224,0.2);
   border-radius: 0px 10px 0px 0px;
+  border-bottom: 3px solid black;
   color: white;
   box-sizing:border-box;
   position:relative;
@@ -46,6 +50,7 @@ body {
   height:70px;
   background-color: rgb(200,200,200);
   border-radius: 100%;
+  border-bottom: 1px solid black;
   position: absolute;
   top: 0;
   left: 0;
@@ -63,22 +68,26 @@ body {
 .challenge-cardplayer{
   box-sizing:border-box;
   padding:0px 10px 0px 20px;
+  * {
+    margin-top: -10px;
+  }
 }
 
 .btn-accept-challenge{
-  width:80px;
-  height: 80px;
+  width:70px;
+  height: 70px;
   transform:scale(1,1);
   background-color:blue;
   border-radius: 100%;
-  box-shadow: 0px 0px 20px rgb(100,100,100);
+  // box-shadow: 0px 0px 20px rgb(100,100,100);
+  border: 2px solid black;
   position: absolute;
-  bottom: -40px;
-  right: 0;
+  bottom: -35px;
+  right: 10px;
   transform:translate(-0%,-0%);
   transition: all 0.2s ease;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 24px;
   a {
     text-decoration: none;
     color:white;

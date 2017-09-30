@@ -14,9 +14,15 @@
 
     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= asset_path '8bit-city-background.gif' %>');">
       <div class="banner-content">
-        <%= yield %>
+        <div class="container">
+          <%= yield %>
+        </div>
       </div>
     </div>
+
+    <% if current_page?(root_path) %>
+      <%= render 'shared/message_box' %>
+    <% end %>
 
     <%= javascript_include_tag 'application' %>
   </body>
