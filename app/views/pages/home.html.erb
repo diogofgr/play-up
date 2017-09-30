@@ -3,28 +3,29 @@
 
 <div class="challenge-list">
   <% Challenge.all.reverse[0..19].each do |challenge| %>
-
+  <div class="challenge-cardb">
     <div class="challenge-card">
-      <h2>
-        <%= challenge.description.capitalize  %>
-      </h2>
-      <% if challenge.author.first_name  %>
-        <p>by <%= challenge.author.first_name  %></p>
-      <% else %>
-        <p><%= anonymous %></p>
-      <% end %>
-
-      <div class="btn-accept-challenge">
-      <%= link_to "Accept", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
+      <div class="challenge-cardpic"></div>
+      <div class="challenge-cardtxt">
+        <h2>
+          <%= challenge.description.capitalize  %>
+        </h2>
+        <% if challenge.author.first_name  %>
+          <p>by <%= challenge.author.first_name  %></p>
+        <% else %>
+          <p><%= anonymous %></p>
+        <% end %>
       </div>
-
+      <div class="btn-accept-challenge">
+        <%= link_to "Accept", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
+      </div>
+    </div>
+    <div class="challenge-cardplayer">
       <% challenge.players[0..3].each do |player|  %>
         <p><%= player.first_name  %></p>
       <% end %>
-
-
     </div>
-
+  </div>
   <% end %>
 </div>
 
