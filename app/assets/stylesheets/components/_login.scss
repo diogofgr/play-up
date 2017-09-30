@@ -1,0 +1,35 @@
+.btn-facebook,
+.btn-facebook:link,
+.btn-facebook:visited {
+  font-weight: bold;
+  padding: 11px 25px;
+  border-radius: 5px;
+  border: 1px solid $facebook-blue;
+  background-color: rgba(77, 117, 198, 0.5);
+  color: white;
+  transition: all 0.2s ease;
+  margin: 5px;
+}
+
+.btn-facebook:hover {
+  color: white;
+  background-color: $facebook-blue;
+  transition: all 0.2s ease;
+}
+
+.form-inputs {
+  color: white;
+  * {
+    color: white;
+  }
+}
+
+.shared-links {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  a {
+    text-decoration: none;
+    color:white;
+    padding: 5px;
+  }
+}

@@ -18,7 +18,7 @@
             <% end %>
           </div>
           <div class="btn-accept-challenge btn-challenge-done">
-            <%= link_to "Done", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
+            <%= link_to "DONE", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
           </div>
 
         </div>
@@ -55,7 +55,7 @@
             <% end %>
           </div>
           <div class="btn-accept-challenge">
-            <%= link_to "Accept", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
+            <%= link_to "ACCEPT", challenge_path(:id  => challenge.id), :method => :patch, :data => {:confirm => "You Sure?"} %>
           </div>
 
         </div>
@@ -74,7 +74,6 @@
   <% end %>
 </div>
 
-<%= render 'shared/message_box' %>
 
 
 

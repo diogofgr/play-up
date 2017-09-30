@@ -1,6 +1,6 @@
 <div class="message-box">
   <%= form_tag( challenges_path, :method => "post", class: "challenge-form") do %>
     <%= text_field_tag :description, params[:description], placeholder: "Tap here to create a challenge...",class: "wide", id: "challenge-description" %>
-    <%= submit_tag "Create", name: nil, class: "btn btn-brand-with-bg answer-submit", id: "answer-submit"%>
+    <%= submit_tag "Create", name: nil, class: "answer-submit", id: "answer-submit"%>
   <% end %>
 </div>
